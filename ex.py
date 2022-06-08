@@ -5,10 +5,10 @@ import sqlite3
 
 def insert_into(liste):
   try:
-    conn = sqlite3.connect('SQLite_Python.db')
+    conn = sqlite3.connect('SQLite_Gh.db')
     cur = conn.cursor()
     print("Connexion réussie à SQLite")
-    sql = "INSERT INTO secteur_activite VALUES (?, ?, ?)"
+    sql = "INSERT INTO secteur_activite(label, nbre_salarie) VALUES (?, ?)"
     cur.executemany(sql, liste)
     conn.commit()
     print("Enregistrements insérés avec succès dans la table secteur_activite")
